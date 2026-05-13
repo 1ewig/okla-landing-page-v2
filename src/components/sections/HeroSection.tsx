@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { slideInRight } from '@/utils/animationVariants';
 import { MODELS_DATA } from '@/utils/constants';
@@ -20,6 +20,24 @@ const marqueeText =
 
 export function HeroSection() {
   const [selectedModel, setSelectedModel] = useState(MODELS_DATA[2]); // Default is OMO
+  const [timerKey, setTimerKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSelectedModel((current) => {
+        const currentIndex = MODELS_DATA.findIndex((m) => m.id === current.id);
+        const nextIndex = (currentIndex + 1) % MODELS_DATA.length;
+        return MODELS_DATA[nextIndex];
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [timerKey]);
+
+  const handleManualSelect = (model: typeof MODELS_DATA[0]) => {
+    setSelectedModel(model);
+    setTimerKey((prev) => prev + 1);
+  };
 
   const scrollToModels = () => {
     document.querySelector('#models')?.scrollIntoView({ behavior: 'smooth' });
@@ -180,21 +198,38 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Elegant Pill-Style Model Switcher Selector */}
-          <div className="flex flex-wrap justify-center gap-2 mt-6 z-20 max-w-[480px]">
+          {/* Elegant Pill-Style Model Switcher Selector with Loading Outline progress */}
+          <div className="flex flex-wrap justify-center gap-3 mt-6 z-20 max-w-[480px]">
             {MODELS_DATA.map((model) => {
               const isSelected = selectedModel.id === model.id;
               return (
                 <button
                   key={model.id}
-                  onClick={() => setSelectedModel(model)}
-                  className={`font-body text-xs font-bold px-[18px] py-[9px] rounded-full transition-all duration-300 ${
+                  onClick={() => handleManualSelect(model)}
+                  className={`relative font-body text-xs font-bold px-[18px] py-[9px] rounded-full transition-all duration-300 ${
                     isSelected
-                      ? 'bg-lime text-charcoal shadow-md border-lime scale-105'
+                      ? 'bg-charcoal text-white scale-105 shadow-md'
                       : 'bg-white/50 backdrop-blur-md text-charcoal border border-charcoal/5 hover:bg-white/90 hover:border-charcoal/20'
                   }`}
                 >
                   {model.name}
+                  {isSelected && (
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
+                      <motion.rect
+                        x="0"
+                        y="0"
+                        rx="9999"
+                        width="100%"
+                        height="100%"
+                        fill="none"
+                        stroke="#C8F000"
+                        strokeWidth="2.5"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 3, ease: 'linear' }}
+                      />
+                    </svg>
+                  )}
                 </button>
               );
             })}
