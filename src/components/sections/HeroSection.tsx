@@ -166,7 +166,7 @@ export function HeroSection() {
       </div>
 
       {/* Full-width Marquee Strip across entire Hero Section */}
-      <div className="absolute bottom-6 left-0 right-0 z-10 w-full overflow-hidden border-y border-charcoal/5 py-3 bg-charcoal/[0.01]">
+      <div className="absolute bottom-0 left-0 right-0 z-10 w-full overflow-hidden border-y border-charcoal/5 py-3 bg-charcoal/[0.01]">
         <div className="flex w-max animate-marquee">
           {[...Array(8)].map((_, i) => (
             <span
