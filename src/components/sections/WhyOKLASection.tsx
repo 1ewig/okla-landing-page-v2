@@ -9,7 +9,7 @@ export function WhyOKLASection() {
   const rightFeatures = FEATURES_DATA.slice(3, 6);
 
   return (
-    <section id="features" className="bg-off-white pt-[140px] pb-16">
+    <section id="why-okla" className="bg-off-white pt-[140px] pb-16">
       <div className="container-okla">
         <SectionHeader
           label="WHY CHOOSE US"
@@ -18,7 +18,7 @@ export function WhyOKLASection() {
         />
 
         {/* Three Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px_1fr] gap-10 items-start mt-16">
+        <div id="features" className="grid grid-cols-1 lg:grid-cols-[1fr_480px_1fr] gap-10 items-start mt-16 scroll-mt-24">
           {/* Left Features */}
           <motion.div
             variants={fadeUpStagger}
