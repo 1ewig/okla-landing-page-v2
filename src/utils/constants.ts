@@ -56,7 +56,7 @@ export const MODELS_DATA: Model[] = [
     speed: '40 km/h',
     motor: '1000W',
     badge: 'Best Seller',
-    image: '/images/model-orbit.png',
+    image: '/images/model-orbit.webp',
   },
   {
     id: 'okt',
@@ -66,7 +66,7 @@ export const MODELS_DATA: Model[] = [
     range: '90 km',
     speed: '45 km/h',
     motor: '1000W',
-    image: '/images/model-okt.png',
+    image: '/images/model-okt.webp',
   },
   {
     id: 'omo',
@@ -77,7 +77,7 @@ export const MODELS_DATA: Model[] = [
     speed: '50 km/h',
     motor: '1200W',
     badge: 'New',
-    image: '/images/model-omo.png',
+    image: '/images/model-omo.webp',
   },
   {
     id: 'omigo',
@@ -87,7 +87,7 @@ export const MODELS_DATA: Model[] = [
     range: '100 km',
     speed: '50 km/h',
     motor: '1200W',
-    image: '/images/model-omigo.png',
+    image: '/images/model-omigo.webp',
   },
   {
     id: 'okg',
@@ -98,7 +98,7 @@ export const MODELS_DATA: Model[] = [
     speed: '60 km/h',
     motor: '1500W',
     badge: 'Best Seller',
-    image: '/images/model-okg.png',
+    image: '/images/model-okg.webp',
   },
   {
     id: 'ova',
@@ -109,7 +109,7 @@ export const MODELS_DATA: Model[] = [
     speed: '80 km/h',
     motor: '3000W',
     badge: 'New',
-    image: '/images/model-ova.png',
+    image: '/images/model-ova.webp',
   },
 ];
 

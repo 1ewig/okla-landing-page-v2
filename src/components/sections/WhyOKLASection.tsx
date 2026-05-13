@@ -46,7 +46,7 @@ export function WhyOKLASection() {
             className="flex items-center justify-center"
           >
             <img
-              src="/images/why-scooter.png"
+              src="/images/why-scooter.webp"
               alt="OKLA OKG performance scooter dramatic angle"
               className="w-full max-w-[480px] block mx-auto"
               style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.18))' }}
