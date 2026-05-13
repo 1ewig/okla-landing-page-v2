@@ -29,7 +29,7 @@ export function HeroSection() {
         const nextIndex = (currentIndex + 1) % MODELS_DATA.length;
         return MODELS_DATA[nextIndex];
       });
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [timerKey]);
@@ -216,17 +216,17 @@ export function HeroSection() {
                   {isSelected && (
                     <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
                       <motion.rect
-                        x="0"
-                        y="0"
+                        x="1"
+                        y="1"
                         rx="9999"
-                        width="100%"
-                        height="100%"
+                        width="calc(100% - 2px)"
+                        height="calc(100% - 2px)"
                         fill="none"
                         stroke="#C8F000"
-                        strokeWidth="2.5"
+                        strokeWidth="2"
                         initial={{ pathLength: 0 }}
                         animate={{ pathLength: 1 }}
-                        transition={{ duration: 3, ease: 'linear' }}
+                        transition={{ duration: 5, ease: 'linear' }}
                       />
                     </svg>
                   )}
