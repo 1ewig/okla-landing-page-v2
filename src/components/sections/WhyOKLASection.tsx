@@ -18,7 +18,7 @@ export function WhyOKLASection() {
         />
 
         {/* Three Column Grid */}
-        <div id="features" className="grid grid-cols-1 lg:grid-cols-[1fr_480px_1fr] gap-10 items-start mt-16 scroll-mt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px_1fr] gap-10 items-start mt-16">
           {/* Left Features */}
           <motion.div
             variants={fadeUpStagger}

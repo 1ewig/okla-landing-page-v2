@@ -41,7 +41,6 @@ export interface Feature {
 export const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'Models', href: '#models' },
-  { label: 'Features', href: '#features' },
   { label: 'Why OKLA', href: '#why-okla' },
   { label: 'Locations', href: '#locations' },
   { label: 'Financing', href: '#financing' },
