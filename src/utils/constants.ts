@@ -40,8 +40,8 @@ export interface Feature {
 
 export const NAV_LINKS = [
   { label: 'Home', href: '#home' },
-  { label: 'Models', href: '#models' },
   { label: 'Why OKLA', href: '#why-okla' },
+  { label: 'Models', href: '#models' },
   { label: 'Locations', href: '#locations' },
   { label: 'Financing', href: '#financing' },
 ];

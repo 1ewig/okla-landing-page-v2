@@ -12,7 +12,7 @@ import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { useActiveSection } from '@/hooks/useActiveSection';
 
-const sectionIds = ['home', 'models', 'why-okla', 'locations', 'financing', 'cta'];
+const sectionIds = ['home', 'why-okla', 'models', 'locations', 'financing', 'cta'];
 
 function App() {
   const { activeSection, isScrolled } = useActiveSection(sectionIds);
