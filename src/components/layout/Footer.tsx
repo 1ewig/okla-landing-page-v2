@@ -49,7 +49,7 @@ export function Footer() {
           <h4 className="font-mono text-[10px] tracking-[3px] text-white/40 uppercase mb-4">
             Navigation
           </h4>
-          {['Home', 'Models', 'Features', 'Why OKLA', 'Locations', 'Financing', 'Blog'].map(
+          {['Home', 'Why OKLA', 'Models', 'Locations', 'Financing', 'Blog'].map(
             (link) => (
               <a
                 key={link}
@@ -123,19 +123,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Decorative Watermark */}
-      <div className="overflow-hidden pb-2">
-        <p
-          className="font-display font-black text-center select-none pointer-events-none leading-none"
-          style={{
-            fontSize: 'clamp(80px, 15vw, 180px)',
-            color: 'rgba(255,255,255,0.03)',
-            letterSpacing: '-4px',
-          }}
-        >
-          OKLA
-        </p>
-      </div>
     </footer>
   );
 }

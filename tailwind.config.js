@@ -87,7 +87,7 @@ module.exports = {
         },
       },
       animation: {
-        "marquee": "marquee 70s linear infinite",
+        "marquee": "marquee 140s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
