@@ -134,19 +134,6 @@ export function HeroSection() {
             </button>
           </motion.div>
 
-          {/* Marquee */}
-          <motion.div variants={heroChild} className="mt-12 overflow-hidden">
-            <div className="flex w-max animate-marquee">
-              {[...Array(4)].map((_, i) => (
-                <span
-                  key={i}
-                  className="font-mono text-xs tracking-[2px] text-okla-muted whitespace-nowrap pr-8"
-                >
-                  {marqueeText}
-                </span>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
 
         {/* Right Column - Scooter Image */}
@@ -176,6 +163,20 @@ export function HeroSection() {
             FROM PKR 159,000
           </motion.div>
         </motion.div>
+      </div>
+
+      {/* Full-width Marquee Strip across entire Hero Section */}
+      <div className="absolute bottom-6 left-0 right-0 z-10 w-full overflow-hidden border-y border-charcoal/5 py-3 bg-charcoal/[0.01]">
+        <div className="flex w-max animate-marquee">
+          {[...Array(8)].map((_, i) => (
+            <span
+              key={i}
+              className="font-mono text-[11px] tracking-[4px] text-charcoal/30 whitespace-nowrap pr-16 uppercase select-none"
+            >
+              {marqueeText}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
