@@ -42,22 +42,30 @@ export function LocationsSection() {
         </motion.div>
 
         {/* Map Placeholder */}
-        <div className="relative mt-10 h-[320px] rounded-[32px] bg-charcoal-3 border border-okla-dark-border overflow-hidden">
+        <div className="relative mt-10 h-[360px] rounded-[32px] bg-charcoal-3 border border-okla-dark-border overflow-hidden group">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13616.842938665373!2d74.4094!3d31.4714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI4JzE3LjAiTiA3NMKwMjQnMzQuMCJF!5e0!3m2!1sen!2s!4v1"
-            className="w-full h-full border-0 grayscale opacity-40"
+            src="https://maps.google.com/maps?q=OKLA%20Pakistan,%20127-A,%20Commercial%20Broadway%20DHA%20Phase%208,%20Lahore%20DHA,%2054940,%20Pakistan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full border-0 grayscale opacity-45 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="OKLA locations map"
+            title="OKLA Experience Center Map Location"
           />
-          {/* Overlay Card */}
-          <div className="absolute top-4 right-4 bg-charcoal/90 backdrop-blur-md px-6 py-5 rounded-xl border border-okla-dark-border">
-            <p className="font-display font-extrabold text-lg text-white">
-              25+ Locations
+          {/* Overlay Card - Flagship Details */}
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-auto sm:left-auto sm:top-6 sm:right-6 bg-charcoal/92 backdrop-blur-md px-6 py-5 rounded-2xl border border-okla-dark-border max-w-[320px] select-none shadow-dark">
+            <p className="font-display font-extrabold text-sm text-white tracking-[0.5px]">
+              FLAGSHIP EXPERIENCE CENTER
             </p>
-            <p className="font-body text-xs text-white/60">Across Pakistan</p>
-            <div className="font-display text-xl font-black text-white/20 mt-1">
-              <span className="text-lime">O</span>KLA
+            <p className="font-body text-[11px] text-lime mt-1 font-semibold uppercase tracking-[1px]">
+              DHA Phase 8 Commercial
+            </p>
+            <p className="font-body text-xs text-white/50 mt-3.5 leading-relaxed">
+              127-A, Commercial Broadway, DHA Phase 8, Lahore, 54940, Pakistan
+            </p>
+            <div className="mt-4 pt-3.5 border-t border-white/5 flex items-center justify-between">
+              <span className="font-body text-[11px] text-white/40 flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-lime animate-pulse" />
+                Open Daily: 11 AM - 8 PM
+              </span>
             </div>
           </div>
         </div>
