@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { slideInRight } from '@/utils/animationVariants';
+import { MODELS_DATA } from '@/utils/constants';
 
 const heroStagger = {
   hidden: {},
@@ -17,6 +19,8 @@ const marqueeText =
   'ZERO EMISSIONS \u00B7 SAVE ON FUEL \u00B7 SMART TFT DASHBOARD \u00B7 FAST CHARGING (0-80% IN 3 HOURS) \u00B7 HIGH-PERFORMANCE HUB MOTOR \u00B7 UP TO 130KM RANGE \u00B7 HILL ASSIST TECHNOLOGY \u00B7 CBS HYDRAULIC DISC BRAKES \u00B7 25+ CITIES SERVICE NETWORK \u00B7 MADE IN PAKISTAN \u00B7 ';
 
 export function HeroSection() {
+  const [selectedModel, setSelectedModel] = useState(MODELS_DATA[2]); // Default is OMO
+
   const scrollToModels = () => {
     document.querySelector('#models')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -136,32 +140,65 @@ export function HeroSection() {
 
         </motion.div>
 
-        {/* Right Column - Scooter Image */}
+        {/* Right Column - Scooter Image and Interactive Switcher */}
         <motion.div
           variants={slideInRight}
           initial="hidden"
           animate="visible"
-          className="order-1 md:order-2 relative flex items-center justify-center pt-8 md:pt-0"
+          className="order-1 md:order-2 relative flex flex-col items-center justify-center pt-8 md:pt-0"
         >
-          <img
-            src="/images/hero-scooter.png"
-            alt="OKLA OMO electric scooter with lime green accents"
-            className="w-full max-w-[640px]"
-            style={{ filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.25))' }}
-            fetchPriority="high"
-          />
-          {/* Floating Badge */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{
-              repeat: Infinity,
-              duration: 3,
-              ease: 'easeInOut',
-            }}
-            className="absolute top-12 right-4 md:top-20 md:right-8 bg-charcoal text-white font-mono text-[13px] px-4 py-2 rounded-full"
-          >
-            FROM PKR 159,000
-          </motion.div>
+          <div className="relative w-full flex items-center justify-center min-h-[300px] md:min-h-[420px]">
+            {/* Model Image with Key for smooth Framer-Motion transition animation on change */}
+            <motion.img
+              key={selectedModel.id}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              src={selectedModel.image}
+              alt={`OKLA ${selectedModel.name} electric scooter`}
+              className="w-full max-w-[640px] select-none pointer-events-none"
+              style={{ filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.22))' }}
+              fetchPriority="high"
+            />
+            {/* Floating Price Badge */}
+            <motion.div
+              key={`badge-${selectedModel.id}`}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1, y: [0, -8, 0] }}
+              transition={{
+                scale: { duration: 0.3 },
+                opacity: { duration: 0.3 },
+                y: {
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: 'easeInOut',
+                },
+              }}
+              className="absolute top-4 right-4 md:top-12 md:right-4 bg-charcoal text-white font-mono text-xs md:text-sm px-4 py-2.5 rounded-full shadow-dark border border-white/10 select-none"
+            >
+              FROM PKR {selectedModel.price.toLocaleString()}
+            </motion.div>
+          </div>
+
+          {/* Elegant Pill-Style Model Switcher Selector */}
+          <div className="flex flex-wrap justify-center gap-2 mt-6 z-20 max-w-[480px]">
+            {MODELS_DATA.map((model) => {
+              const isSelected = selectedModel.id === model.id;
+              return (
+                <button
+                  key={model.id}
+                  onClick={() => setSelectedModel(model)}
+                  className={`font-body text-xs font-bold px-[18px] py-[9px] rounded-full transition-all duration-300 ${
+                    isSelected
+                      ? 'bg-lime text-charcoal shadow-md border-lime scale-105'
+                      : 'bg-white/50 backdrop-blur-md text-charcoal border border-charcoal/5 hover:bg-white/90 hover:border-charcoal/20'
+                  }`}
+                >
+                  {model.name}
+                </button>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
 
