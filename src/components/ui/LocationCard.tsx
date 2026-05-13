@@ -47,7 +47,9 @@ export function LocationCard({ location }: LocationCardProps) {
 
       {/* Directions Link */}
       <a
-        href="#"
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`OKLA Pakistan, ${location.address}, ${location.city}, Pakistan`)}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-block mt-4 font-body text-[13px] font-semibold text-lime hover:underline transition-all"
       >
         Get Directions &rarr;
