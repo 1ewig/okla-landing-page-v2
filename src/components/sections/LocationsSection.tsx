@@ -50,24 +50,6 @@ export function LocationsSection() {
             referrerPolicy="no-referrer-when-downgrade"
             title="OKLA Experience Center Map Location"
           />
-          {/* Overlay Card - Flagship Details (Solid high-contrast design for 100% readability over active map) */}
-          <div className="absolute bottom-4 left-4 right-4 sm:bottom-auto sm:left-auto sm:top-6 sm:right-6 bg-charcoal px-6 py-5 rounded-2xl border border-white/10 max-w-[320px] select-none shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20">
-            <p className="font-display font-black text-sm text-white tracking-[0.5px]">
-              FLAGSHIP EXPERIENCE CENTER
-            </p>
-            <p className="font-body text-[11px] text-lime mt-1 font-semibold uppercase tracking-[1px]">
-              DHA Phase 8 Commercial
-            </p>
-            <p className="font-body text-xs text-white/85 mt-3.5 leading-relaxed">
-              127-A, Commercial Broadway, DHA Phase 8, Lahore, 54940, Pakistan
-            </p>
-            <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between">
-              <span className="font-body text-[11px] text-white/75 flex items-center gap-1.5 font-medium">
-                <span className="w-2.5 h-2.5 rounded-full bg-lime animate-pulse" />
-                Open Daily: 11 AM - 8 PM
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
